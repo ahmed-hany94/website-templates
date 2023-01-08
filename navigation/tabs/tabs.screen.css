@@ -1,0 +1,258 @@
+/* Reset */
+
+body {
+  /* base colors */
+  --hue-primary: 224;
+  --sat-primary: 0%;
+  --hue-secondary: 200;
+  --sat-secondary: 0%;
+  --hue-featured: 180;
+  --sat-featured: 0%;
+  --luma-flowText: 20%;
+  --luma-headings: 5%;
+  --luma-featured: 10%;
+  --luma-nav: 25%;
+  --luma-header-bg: 80%;
+  --luma-main-bg: 100%;
+  --luma-article-bg: 90%;
+  --luma-fader: 70%;
+  --color-main-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-main-bg)
+  );
+  --color-flowText: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-flowText)
+  );
+  --color-featured: hsl(
+    var(--hue-featured),
+    var(--sat-featured),
+    var(--luma-featured)
+  );
+  --color-chrome-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-header-bg)
+  );
+  --color-heading-text: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-headings)
+  );
+  --color-modal-fader: hsla(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-fader),
+    0.8
+  );
+  --color-modal-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-main-bg)
+  );
+  --color-nav-anchor: hsl(
+    var(--hue-featured),
+    var(--sat-primary),
+    var(--luma-nav)
+  );
+  --color-article-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-article-bg)
+  );
+  --color-shadow: #0003;
+  --shadow-chrome: 0 0.25em 1em 0.25em var(--color-shadow);
+  --shadow-button: 0 0.25em 0.25em 0.125em var(--color-shadow);
+  --shadow-formElement-focus: 0 0 0.25em 0.125em #038;
+
+  --border-hairline: 1px solid #0004;
+
+  /* base measurements */
+
+  --maxWidth-constrain: 64rem;
+  --maxWidth-flow: 40rem;
+  --maxWidth-modal: 32rem;
+  --maxWidth-modalForm: 24rem;
+  --pad: clamp(0.5em, min(2vw, 4vh), 4em);
+  --borderRadius-outer: 0.5em;
+  --borderRadius-inner: 0.25em;
+}
+
+html,
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+fieldset,
+caption,
+table,
+tr,
+td,
+th,
+address,
+blockquote,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+fieldset,
+object {
+  border: none;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+hr {
+  display: none;
+}
+
+body,
+button,
+input,
+table,
+textarea,
+select {
+  font: normal 1em/1.5 "poppins", arial, helvetica, sans-serif;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: var(--shadow-formElement-focus);
+}
+
+/* Main */
+
+.tabset1 {
+  padding: 6rem 2rem;
+  border-bottom: 10px solid black;
+}
+
+.tabset1 > input {
+  display: block; /* "enable" hidden elements in IE/edge */
+  position: absolute; /* then hide them off-screen */
+  left: -100%;
+}
+
+.tabset1 > ul {
+  position: relative;
+  z-index: 999;
+  list-style: none;
+  display: flex;
+  margin-bottom: -1px;
+}
+
+.tabset1 > ul label,
+.tabset1 > div {
+  border: 1px solid hsl(220, 100%, 60%);
+}
+
+.tabset1 > ul label {
+  display: inline-block;
+  padding: 0.25em 1em;
+  background: hsla(220 50% 20% / 1);
+  border-right-width: 0;
+}
+
+.tabset1 > ul li:first-child label {
+  border-radius: 0.5em 0 0 0;
+}
+
+.tabset1 > ul li:last-child label {
+  border-right-width: 1px;
+  border-radius: 0 0.5em 0 0;
+}
+
+.tabset1 > div {
+  position: relative;
+  background: hsla(220 50% 40% / 1);
+  border-radius: 0 0.5em 0.5em 0.5em;
+}
+
+.tabset1 > input:nth-child(1):focus ~ ul li:nth-child(1) label,
+.tabset1 > input:nth-child(2):focus ~ ul li:nth-child(2) label,
+.tabset1 > input:nth-child(3):focus ~ ul li:nth-child(3) label,
+.tabset1 > input:nth-child(4):focus ~ ul li:nth-child(4) label,
+.tabset1 > input:nth-child(5):focus ~ ul li:nth-child(5) label,
+.tabset1 > input:nth-child(6):focus ~ ul li:nth-child(6) label,
+.tabset1 > input:nth-child(7):focus ~ ul li:nth-child(7) label,
+.tabset1 > input:nth-child(8):focus ~ ul li:nth-child(8) label,
+.tabset1 > input:nth-child(9):focus ~ ul li:nth-child(9) label {
+  text-decoration: underline;
+}
+
+.tabset1 > input:nth-child(1):checked ~ ul li:nth-child(1) label,
+.tabset1 > input:nth-child(2):checked ~ ul li:nth-child(2) label,
+.tabset1 > input:nth-child(3):checked ~ ul li:nth-child(3) label,
+.tabset1 > input:nth-child(4):checked ~ ul li:nth-child(4) label,
+.tabset1 > input:nth-child(5):checked ~ ul li:nth-child(5) label,
+.tabset1 > input:nth-child(6):checked ~ ul li:nth-child(6) label,
+.tabset1 > input:nth-child(7):checked ~ ul li:nth-child(7) label,
+.tabset1 > input:nth-child(8):checked ~ ul li:nth-child(8) label,
+.tabset1 > input:nth-child(9):checked ~ ul li:nth-child(9) label {
+  background: hsla(220 50% 30% / 1);
+  border-bottom-color: hsla(120 50% 50% / 0.7);
+}
+
+.tabset1 > div > section,
+.tabset1 > div > section h2 {
+  position: absolute;
+  top: -999em;
+  left: -999em;
+}
+.tabset1 > div > section {
+  padding: 1em 1em 0;
+}
+
+.tabset1 > input:nth-child(1):checked ~ div > section:nth-child(1),
+.tabset1 > input:nth-child(2):checked ~ div > section:nth-child(2),
+.tabset1 > input:nth-child(3):checked ~ div > section:nth-child(3),
+.tabset1 > input:nth-child(4):checked ~ div > section:nth-child(4),
+.tabset1 > input:nth-child(5):checked ~ div > section:nth-child(5),
+.tabset1 > input:nth-child(6):checked ~ div > section:nth-child(6),
+.tabset1 > input:nth-child(7):checked ~ div > section:nth-child(7),
+.tabset1 > input:nth-child(8):checked ~ div > section:nth-child(8),
+.tabset1 > input:nth-child(9):checked ~ div > section:nth-child(9) {
+  position: Static;
+}
+
+.tabset1 > ul label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

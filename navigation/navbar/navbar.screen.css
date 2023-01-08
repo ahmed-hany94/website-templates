@@ -1,0 +1,237 @@
+/* Reset */
+
+body {
+  /* base colors */
+  --hue-primary: 224;
+  --sat-primary: 0%;
+  --hue-secondary: 200;
+  --sat-secondary: 0%;
+  --hue-featured: 180;
+  --sat-featured: 0%;
+  --luma-flowText: 20%;
+  --luma-headings: 5%;
+  --luma-featured: 10%;
+  --luma-nav: 25%;
+  --luma-header-bg: 80%;
+  --luma-main-bg: 100%;
+  --luma-article-bg: 90%;
+  --luma-fader: 70%;
+  --color-main-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-main-bg)
+  );
+  --color-flowText: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-flowText)
+  );
+  --color-featured: hsl(
+    var(--hue-featured),
+    var(--sat-featured),
+    var(--luma-featured)
+  );
+  --color-chrome-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-header-bg)
+  );
+  --color-heading-text: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-headings)
+  );
+  --color-modal-fader: hsla(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-fader),
+    0.8
+  );
+  --color-modal-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-main-bg)
+  );
+  --color-nav-anchor: hsl(
+    var(--hue-featured),
+    var(--sat-primary),
+    var(--luma-nav)
+  );
+  --color-article-bg: hsl(
+    var(--hue-primary),
+    var(--sat-primary),
+    var(--luma-article-bg)
+  );
+  --color-shadow: #0003;
+  --shadow-chrome: 0 0.25em 1em 0.25em var(--color-shadow);
+  --shadow-button: 0 0.25em 0.25em 0.125em var(--color-shadow);
+  --shadow-formElement-focus: 0 0 0.25em 0.125em #038;
+
+  --border-hairline: 1px solid #0004;
+
+  /* base measurements */
+
+  --maxWidth-constrain: 64rem;
+  --maxWidth-flow: 40rem;
+  --maxWidth-modal: 32rem;
+  --maxWidth-modalForm: 24rem;
+  --pad: clamp(0.5em, min(2vw, 4vh), 4em);
+  --borderRadius-outer: 0.5em;
+  --borderRadius-inner: 0.25em;
+}
+
+html,
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+fieldset,
+caption,
+table,
+tr,
+td,
+th,
+address,
+blockquote,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+fieldset,
+object {
+  border: none;
+}
+
+*,
+*:after,
+*:before {
+  flex: 1 0 auto; /* safari bugfix */
+  box-sizing: border-box;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+hr {
+  display: none;
+}
+
+body,
+button,
+input,
+table,
+textarea,
+select {
+  font: normal 1em/1.5 "poppins", arial, helvetica, sans-serif;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: var(--shadow-formElement-focus);
+}
+
+/* Main */
+
+header {
+  /* To seperate between snippets */
+  border-bottom: 10px solid black;
+}
+
+/* navbar 1 */
+#header1 {
+  display: flex;
+  flex-grow: 0; /* Because of the reset above */
+  padding: 0.5rem 1rem;
+}
+
+#header1 > h1 {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+#header1 > h1 ~ * {
+  flex-grow: 0;
+}
+
+#nav1 {
+  padding: 0.75em 0;
+}
+
+#nav1 > ul li {
+  list-style: none;
+  display: inline;
+  margin-left: 1.5rem;
+}
+
+#header1 > h1 > a,
+#nav1 > ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: hsla(0deg 0% 25% / 1);
+}
+
+/* navbar 2 */
+
+#header2 {
+  display: flex;
+  flex-grow: 0; /* Because of the reset above */
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: clamp(1rem, min(5vh, 3vw), 2rem) clamp(0.5rem, 2vw, 2rem);
+  align-items: center;
+}
+
+#header2 > h1 {
+  font-size: 1.25rem;
+  line-height: 2;
+  flex-grow: 0;
+}
+#header2 > h1 > a > span {
+  color: hsl(209deg 76% 60% / 1);
+}
+
+#nav2 {
+  flex-grow: 1;
+  padding-left: 1.5rem;
+}
+
+#nav2 > ul li {
+  float: left;
+  list-style: none;
+  margin-left: 1rem;
+}
+
+#nav2 > ul li.alternate {
+  float: right;
+}
+
+#header2 > h1 > a,
+#nav2 > ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: hsla(0deg 0% 25% / 1);
+}
